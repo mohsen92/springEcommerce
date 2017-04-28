@@ -5,7 +5,9 @@
  */
 package com.iti.model.dao;
 
+import com.iti.model.entity.User;
 import com.iti.model.entity.UserOrder;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +17,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserOrderDAO extends CrudRepository<UserOrder, Integer>{
-    
+     List<UserOrder> findUserOrders(User user);
 }
