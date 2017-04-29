@@ -17,5 +17,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserOrderDAO extends CrudRepository<UserOrder, Integer>{
-     List<UserOrder> findUserOrders(User user);
+     List<UserOrder> findAllByUserId(User user);
 }

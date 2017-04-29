@@ -22,7 +22,7 @@ public interface CartItemDAO extends CrudRepository<CartItem, Integer>{
     List<CartItem> findCartItemsByUserId_userId(Integer userId);
     void deleteCarttItemByUserId_userId(Integer userId);
     @Query("SELECT CASE WHEN COUNT(c) > 0 THEN 'true' ELSE 'false' END FROM CartItem c WHERE c.productId = ? AND c.userId = ?")
-    Boolean existsByProductAndUser(Product product, User user);
-    CartItem findOneByProductAndUser(Product product, User user);
+    Boolean existsByProductIdAndUserId(Product product, User user);
+    CartItem findOneByProductIdAndUserId(Product product, User user);
     void deleteCarttItemByUserId_userIdAndProductId_productId(Integer userId,Integer productId);
 }

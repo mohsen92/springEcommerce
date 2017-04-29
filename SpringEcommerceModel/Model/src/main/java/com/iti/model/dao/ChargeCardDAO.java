@@ -16,8 +16,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ChargeCardDAO extends CrudRepository<ChargeCard, Integer>{
-    List<ChargeCard> findNotChargedChargeCard();
-    List<ChargeCard> findChargedChargeCard();
-    List<ChargeCard> findNotPrintedChargeCard();
-    List<ChargeCard> findPrintedChargeCard();
+    List<ChargeCard> findAllByChargedTrue();
+    List<ChargeCard> findAllByChargedFalse();
+    List<ChargeCard> findAllByPrintedTrue();
+    List<ChargeCard> findAllByPrintedFalse();
 }

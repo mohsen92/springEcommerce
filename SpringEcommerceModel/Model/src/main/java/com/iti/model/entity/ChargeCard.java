@@ -35,7 +35,7 @@ public class ChargeCard implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic(optional = false)
     @Column(name = "creditCard_id")
     private Integer creditCardid;
@@ -54,12 +54,7 @@ public class ChargeCard implements Serializable {
     public ChargeCard() {
     }
 
-    public ChargeCard(Integer creditCardid) {
-        this.creditCardid = creditCardid;
-    }
-
-    public ChargeCard(Integer creditCardid, double amonut, String number) {
-        this.creditCardid = creditCardid;
+    public ChargeCard(double amonut, String number) {
         this.amonut = amonut;
         this.number = number;
     }
@@ -128,5 +123,5 @@ public class ChargeCard implements Serializable {
     public String toString() {
         return "com.iti.model.entity.ChargeCard[ creditCardid=" + creditCardid + " ]";
     }
-    
+
 }

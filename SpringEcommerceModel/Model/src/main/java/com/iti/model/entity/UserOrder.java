@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author Samir
  */
 @Entity
-@Table(name = "order")
+@Table(name = "userorder")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "UserOrder.findAll", query = "SELECT u FROM UserOrder u")
@@ -43,7 +43,7 @@ public class UserOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic(optional = false)
     @Column(name = "order_id")
     private Integer orderId;
@@ -74,12 +74,8 @@ public class UserOrder implements Serializable {
     public UserOrder() {
     }
 
-    public UserOrder(Integer orderId) {
-        this.orderId = orderId;
-    }
 
-    public UserOrder(Integer orderId, String shipAddress, String city, String state, String country, String phone, String zip) {
-        this.orderId = orderId;
+    public UserOrder(String shipAddress, String city, String state, String country, String phone, String zip) {
         this.shipAddress = shipAddress;
         this.city = city;
         this.state = state;
