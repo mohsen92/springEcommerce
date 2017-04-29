@@ -18,19 +18,23 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserOrderService {
+
     @Autowired
-    UserOrderDAO userOrderDAO;
-    
-    public UserOrder add(UserOrder userOrder){
-       return userOrderDAO.save(userOrder);
+    private UserOrderDAO userOrderDAO;
+
+    public UserOrder add(UserOrder userOrder) {
+        return userOrderDAO.save(userOrder);
     }
-    public UserOrder update(UserOrder userOrder){
-       return add(userOrder);
+
+    public UserOrder update(UserOrder userOrder) {
+        return add(userOrder);
     }
-    public void delete(UserOrder userOrder){
-         userOrderDAO.delete(userOrder);
+
+    public void delete(UserOrder userOrder) {
+        userOrderDAO.delete(userOrder);
     }
-    List<UserOrder> findUserOrders(User user){
+
+    List<UserOrder> findUserOrders(User user) {
         return userOrderDAO.findUserOrders(user);
     }
 }
