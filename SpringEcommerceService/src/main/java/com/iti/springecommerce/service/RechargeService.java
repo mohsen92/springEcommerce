@@ -11,13 +11,13 @@ import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Samir
  */
-@Component
-@Transactional
+@Service
 public class RechargeService {
     @Autowired
     ChargeCardDAO chargeCardDAO; 
@@ -29,15 +29,15 @@ public class RechargeService {
         return add(chargeCard);
     }
     public List<ChargeCard> findNotChargedChargeCard(){
-        return chargeCardDAO.findNotChargedChargeCard();
+        return chargeCardDAO.findAllByChargedFalse();
     }
-    List<ChargeCard> findChargedChargeCard(){
-        return chargeCardDAO.findChargedChargeCard();
+    public List<ChargeCard> findChargedChargeCard(){
+        return chargeCardDAO.findAllByChargedTrue();
     }
-    List<ChargeCard> findNotPrintedChargeCard(){
-        return chargeCardDAO.findNotPrintedChargeCard();
+    public List<ChargeCard> findNotPrintedChargeCard(){
+        return chargeCardDAO.findAllByPrintedFalse();
     }
-    List<ChargeCard> findPrintedChargeCard(){
-        return chargeCardDAO.findPrintedChargeCard();
+    public List<ChargeCard> findPrintedChargeCard(){
+        return chargeCardDAO.findAllByPrintedTrue();
     }
 }

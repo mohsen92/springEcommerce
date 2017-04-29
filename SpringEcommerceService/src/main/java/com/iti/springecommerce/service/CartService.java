@@ -25,14 +25,14 @@ public class CartService {
 
     public void addToCart(User user, Product product, int quantity) {
 
-        if (!cartItemDAO.existsByProductAndUser(product, user)) {
+        if (!cartItemDAO.existsByProductIdAndUserId(product, user)) {
             CartItem item = new CartItem();
             item.setProductId(product);
             item.setUserId(user);
             item.setQuantity(quantity);
             cartItemDAO.save(item);
         } else {
-            CartItem item = cartItemDAO.findOneByProductAndUser(product, user);
+            CartItem item = cartItemDAO.findOneByProductIdAndUserId(product, user);
             item.setQuantity(item.getQuantity()+quantity);
             cartItemDAO.save(item);
         }
