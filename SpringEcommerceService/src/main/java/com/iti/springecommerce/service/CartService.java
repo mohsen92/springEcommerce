@@ -32,7 +32,7 @@ public class CartService {
             item.setQuantity(quantity);
             cartItemDAO.save(item);
         } else {
-            CartItem item = cartItemDAO.findOneByProductAndUser(product, user);
+            CartItem item = cartItemDAO.findOneByproductIdAndUserId(product, user);
             item.setQuantity(item.getQuantity()+quantity);
             cartItemDAO.save(item);
         }

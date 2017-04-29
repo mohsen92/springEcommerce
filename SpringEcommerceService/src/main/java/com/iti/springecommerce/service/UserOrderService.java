@@ -35,6 +35,6 @@ public class UserOrderService {
     }
 
     List<UserOrder> findUserOrders(User user) {
-        return userOrderDAO.findUserOrders(user);
+        return userOrderDAO.findAllByUserId(user);
     }
 }
