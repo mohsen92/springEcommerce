@@ -38,14 +38,14 @@ public class ProductService {
         return productRepo.exists(ProductID);
     }
 
-//add new product with no image
+//add new product with no image//tested
     public boolean addProduct(Product newProduct) {
         Product p = productRepo.save(newProduct);
         System.out.println("new product is:" + p);
         return p != null;
     }
 //add new product with image
-
+//tested
     @Transactional
     public boolean addProduct(Product newProduct, ProductImage img) {
 
@@ -64,6 +64,18 @@ public class ProductService {
         return p != null;
     }
     @Transactional
+    public boolean addImageToProduct(int productId,ProductImage img){
+        if(isExists(productId)){
+            Product targetProduct = productRepo.findOne(productId);
+            img.setProductId(targetProduct);
+           ProductImage savedimg =productImgRepo.save(img);
+            targetProduct.setImageId(savedimg.getId());
+            productRepo.save(targetProduct);
+        }
+        return true;
+    }
+    
+    @Transactional
     public boolean deleteProduct(int productID) {
         Product deletedProduct = productRepo.findOne(productID);
         if(deletedProduct!=null){
@@ -75,6 +87,7 @@ public class ProductService {
        return true;
     }
     //display page with all product
+    //tested
     public Page<Product> getProductPage(int pageNumber, int pageSize) {
         Pageable pgb1 = new PageRequest(pageNumber, pageSize);
         return productRepo.findAll(pgb1);
@@ -82,6 +95,7 @@ public class ProductService {
 
     //display page of product with in category
     //need to loop for all pages or make print method
+    //tested for page1
     public Page<Product> getProductbyCatgeory(Category catgeory, int pageNumber, int pageSize) {
         Pageable pgb1 = new PageRequest(pageNumber, pageSize);
         return productRepo.findAllByproductCategory(catgeory, pgb1);
@@ -89,7 +103,7 @@ public class ProductService {
 
     
 //////////////catgeory/////////
-
+//tested
     public Category getCategory(int id) {
         return catRepo.findOne(id);
     }
