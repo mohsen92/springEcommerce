@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iti.springecommerceservice;
+package com.iti.springecommerce.service;
 
 import com.iti.model.dao.CartItemDAO;
 import com.iti.model.entity.CartItem;

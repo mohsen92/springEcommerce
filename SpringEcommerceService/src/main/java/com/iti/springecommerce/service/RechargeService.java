@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iti.model.service;
+package com.iti.springecommerce.service;
 
 import com.iti.model.dao.ChargeCardDAO;
 import com.iti.model.entity.ChargeCard;

@@ -5,7 +5,10 @@
  */
 package com.iti.model.dao;
 
+import com.iti.model.entity.Category;
 import com.iti.model.entity.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +17,14 @@ import org.springframework.stereotype.Repository;
  * @author Samir
  */
 @Repository
-public interface ProductDAO extends PagingAndSortingRepository<Product, Integer>{
-    
+public interface ProductDAO extends PagingAndSortingRepository<Product, Integer> {
+
+    Page<Product> findAllByproductCategory(Category category, Pageable pgbl);
+
+    Page<Product> findAllByProductNameLike(String productName, Pageable pgbl);
+
+    Page<Product> findAllByproductCategoryAndProductNameLike(Category category, String productName, Pageable pgbl);
+
+    Page<Product> findAllByproductCategoryAndProductNameLikeAndPriceBetween(Category category, String productName, double lowPrice, double highPrice, Pageable pgbl);
+
 }
