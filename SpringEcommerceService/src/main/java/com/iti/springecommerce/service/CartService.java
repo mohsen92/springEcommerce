@@ -47,6 +47,10 @@ public class CartService {
         cartItemDAO.deleteCarttItemByUserId_userIdAndProductId_productId(userId, productId);
     }
     
+    public void UpdateCartItem(CartItem cartItem) {
+        cartItemDAO.save(cartItem);
+    }
+    
     
     
 }
