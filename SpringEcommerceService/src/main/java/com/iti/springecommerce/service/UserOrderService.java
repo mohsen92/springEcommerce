@@ -6,8 +6,8 @@
 package com.iti.springecommerce.service;
 
 import com.iti.model.dao.UserOrderDAO;
-import com.iti.model.entity.User;
-import com.iti.model.entity.UserOrder;
+import com.iti.model.entites.User;
+import com.iti.model.entites.UserOrder;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

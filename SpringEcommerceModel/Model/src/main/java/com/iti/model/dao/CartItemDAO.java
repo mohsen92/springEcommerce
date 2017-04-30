@@ -5,9 +5,11 @@
  */
 package com.iti.model.dao;
 
-import com.iti.model.entity.CartItem;
-import com.iti.model.entity.Product;
-import com.iti.model.entity.User;
+
+
+import com.iti.model.entites.CartItem;
+import com.iti.model.entites.Product;
+import com.iti.model.entites.User;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

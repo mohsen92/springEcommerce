@@ -5,8 +5,8 @@
  */
 package com.iti.model.dao;
 
-import com.iti.model.entity.ChargeCard;
-import java.util.List;
+
+import com.iti.model.entites.ChargeCard;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

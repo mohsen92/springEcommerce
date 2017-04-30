@@ -5,8 +5,8 @@
  */
 package com.iti.model.dao;
 
-import com.iti.model.entity.Category;
-import com.iti.model.entity.Product;
+import com.iti.model.entites.Category;
+import com.iti.model.entites.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
