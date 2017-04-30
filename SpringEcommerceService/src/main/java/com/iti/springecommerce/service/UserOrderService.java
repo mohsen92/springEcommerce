@@ -10,13 +10,13 @@ import com.iti.model.entites.User;
 import com.iti.model.entites.UserOrder;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Samir
  */
-@Component
+@Service
 public class UserOrderService {
 
     @Autowired
@@ -34,7 +34,7 @@ public class UserOrderService {
         userOrderDAO.delete(userOrder);
     }
 
-    List<UserOrder> findUserOrders(User user) {
+    public List<UserOrder> findUserOrders(User user) {
         return userOrderDAO.findAllByUserId(user);
     }
 }

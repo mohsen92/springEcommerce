@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iti.model.main;
+package com.iti.springecommerce.app;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,7 +13,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author Samir
  */
 public class App {
+
     public static void main(String[] args) {
-         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("ServiceConfig.xml");
+    
     }
+
 }

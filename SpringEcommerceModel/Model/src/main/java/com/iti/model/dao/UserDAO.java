@@ -7,6 +7,7 @@ package com.iti.model.dao;
 
 
 import com.iti.model.entites.User;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +17,14 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserDAO extends CrudRepository<User, Integer>{
+      @Override
+    User findOne(Integer id);
+
+    @Override
+    List<User> findAll();
+   
+    public User findOneByEmail(String em);
+    
+    public User findOneByEmailAndPassword(String em,String password);
     
 }
