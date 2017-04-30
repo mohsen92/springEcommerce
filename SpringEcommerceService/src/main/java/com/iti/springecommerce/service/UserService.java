@@ -7,6 +7,7 @@ package com.iti.springecommerce.service;
 
 
 import com.iti.model.dao.*;
+import com.iti.model.entites.User;
 import com.iti.springecommerce.utility.BCrypt;
 import com.iti.springecommerce.utility.Mailer;
 import java.util.Date;
