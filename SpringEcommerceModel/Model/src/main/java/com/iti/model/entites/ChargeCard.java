@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iti.model.entity;
+package com.iti.model.entites;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -20,22 +20,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Samir
+ * @author Mrawi
  */
 @Entity
 @Table(name = "chargecard")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "ChargeCard.findAll", query = "SELECT c FROM ChargeCard c")
-    , @NamedQuery(name = "ChargeCard.findByCreditCardid", query = "SELECT c FROM ChargeCard c WHERE c.creditCardid = :creditCardid")
-    , @NamedQuery(name = "ChargeCard.findByAmonut", query = "SELECT c FROM ChargeCard c WHERE c.amonut = :amonut")
-    , @NamedQuery(name = "ChargeCard.findByPrinted", query = "SELECT c FROM ChargeCard c WHERE c.printed = :printed")
-    , @NamedQuery(name = "ChargeCard.findByCharged", query = "SELECT c FROM ChargeCard c WHERE c.charged = :charged")})
+    @NamedQuery(name = "Chargecard.findAll", query = "SELECT c FROM Chargecard c")
+    , @NamedQuery(name = "Chargecard.findByCreditCardid", query = "SELECT c FROM Chargecard c WHERE c.creditCardid = :creditCardid")
+    , @NamedQuery(name = "Chargecard.findByAmonut", query = "SELECT c FROM Chargecard c WHERE c.amonut = :amonut")
+    , @NamedQuery(name = "Chargecard.findByPrinted", query = "SELECT c FROM Chargecard c WHERE c.printed = :printed")
+    , @NamedQuery(name = "Chargecard.findByCharged", query = "SELECT c FROM Chargecard c WHERE c.charged = :charged")})
 public class ChargeCard implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "creditCard_id")
     private Integer creditCardid;
@@ -54,7 +54,12 @@ public class ChargeCard implements Serializable {
     public ChargeCard() {
     }
 
-    public ChargeCard(double amonut, String number) {
+    public ChargeCard(Integer creditCardid) {
+        this.creditCardid = creditCardid;
+    }
+
+    public ChargeCard(Integer creditCardid, double amonut, String number) {
+        this.creditCardid = creditCardid;
         this.amonut = amonut;
         this.number = number;
     }
@@ -121,7 +126,7 @@ public class ChargeCard implements Serializable {
 
     @Override
     public String toString() {
-        return "com.iti.model.entity.ChargeCard[ creditCardid=" + creditCardid + " ]";
+        return "com.iti.model.entites.Chargecard[ creditCardid=" + creditCardid + " ]";
     }
-
+    
 }

@@ -10,6 +10,14 @@
     <class>com.iti.model.entity.OrderItem</class>
     <class>com.iti.model.entity.ProductImage</class>
     <class>com.iti.model.entity.UserOrder</class>
+    <class>com.iti.model.entites.Product</class>
+    <class>com.iti.model.entites.Orderitem</class>
+    <class>com.iti.model.entites.Category</class>
+    <class>com.iti.model.entites.User</class>
+    <class>com.iti.model.entites.ChargeCard</class>
+    <class>com.iti.model.entites.ProductImage</class>
+    <class>com.iti.model.entites.UserOrder</class>
+    <class>com.iti.model.entites.CartItem</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/springproject?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

@@ -5,7 +5,8 @@
  */
 package com.iti.model.dao;
 
-import com.iti.model.entity.Category;
+
+import com.iti.model.entites.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

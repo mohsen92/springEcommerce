@@ -9,9 +9,9 @@ package com.iti.springecommerce.service;
 import com.iti.model.dao.CategoryDAO;
 import com.iti.model.dao.ProductDAO;
 import com.iti.model.dao.ProductImageDAO;
-import com.iti.model.entity.Category;
-import com.iti.model.entity.Product;
-import com.iti.model.entity.ProductImage;
+import com.iti.model.entites.Category;
+import com.iti.model.entites.Product;
+import com.iti.model.entites.ProductImage;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -53,8 +53,8 @@ public class ProductService {
         if (p != null) {
             img.setProductId(p);
             ProductImage lastimg = productImgRepo.save(img);
-            p.setImageId(lastimg.getId());
-            p.getProductImageCollection().add(lastimg);
+          
+            p.getProductimageCollection().add(lastimg);
             productRepo.save(p);
         }else{
             return false;
@@ -69,8 +69,7 @@ public class ProductService {
             Product targetProduct = productRepo.findOne(productId);
             img.setProductId(targetProduct);
            ProductImage savedimg =productImgRepo.save(img);
-            targetProduct.setImageId(savedimg.getId());
-            productRepo.save(targetProduct);
+           
         }
         return true;
     }
@@ -79,7 +78,8 @@ public class ProductService {
     public boolean deleteProduct(int productID) {
         Product deletedProduct = productRepo.findOne(productID);
         if(deletedProduct!=null){
-             productImgRepo.delete(deletedProduct.getImageId());
+            
+         productRepo.delete(productID);
         
         }else{
             return false;

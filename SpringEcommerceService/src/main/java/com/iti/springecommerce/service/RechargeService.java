@@ -6,11 +6,9 @@
 package com.iti.springecommerce.service;
 
 import com.iti.model.dao.ChargeCardDAO;
-import com.iti.model.entity.ChargeCard;
+import com.iti.model.entites.ChargeCard;
 import java.util.List;
-import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**

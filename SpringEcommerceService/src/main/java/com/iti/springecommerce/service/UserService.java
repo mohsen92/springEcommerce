@@ -5,7 +5,7 @@
  */
 package com.iti.springecommerce.service;
 
-import com.iti.model.entity.*;
+
 import com.iti.model.dao.*;
 import com.iti.springecommerce.utility.BCrypt;
 import com.iti.springecommerce.utility.Mailer;

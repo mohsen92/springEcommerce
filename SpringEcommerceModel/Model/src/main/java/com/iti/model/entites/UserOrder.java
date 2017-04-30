@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.iti.model.entity;
+package com.iti.model.entites;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -25,25 +25,25 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Samir
+ * @author Mrawi
  */
 @Entity
 @Table(name = "userorder")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "UserOrder.findAll", query = "SELECT u FROM UserOrder u")
-    , @NamedQuery(name = "UserOrder.findByOrderId", query = "SELECT u FROM UserOrder u WHERE u.orderId = :orderId")
-    , @NamedQuery(name = "UserOrder.findByShipAddress", query = "SELECT u FROM UserOrder u WHERE u.shipAddress = :shipAddress")
-    , @NamedQuery(name = "UserOrder.findByCity", query = "SELECT u FROM UserOrder u WHERE u.city = :city")
-    , @NamedQuery(name = "UserOrder.findByState", query = "SELECT u FROM UserOrder u WHERE u.state = :state")
-    , @NamedQuery(name = "UserOrder.findByCountry", query = "SELECT u FROM UserOrder u WHERE u.country = :country")
-    , @NamedQuery(name = "UserOrder.findByPhone", query = "SELECT u FROM UserOrder u WHERE u.phone = :phone")
-    , @NamedQuery(name = "UserOrder.findByZip", query = "SELECT u FROM UserOrder u WHERE u.zip = :zip")})
+    @NamedQuery(name = "Userorder.findAll", query = "SELECT u FROM Userorder u")
+    , @NamedQuery(name = "Userorder.findByOrderId", query = "SELECT u FROM Userorder u WHERE u.orderId = :orderId")
+    , @NamedQuery(name = "Userorder.findByShipAddress", query = "SELECT u FROM Userorder u WHERE u.shipAddress = :shipAddress")
+    , @NamedQuery(name = "Userorder.findByCity", query = "SELECT u FROM Userorder u WHERE u.city = :city")
+    , @NamedQuery(name = "Userorder.findByState", query = "SELECT u FROM Userorder u WHERE u.state = :state")
+    , @NamedQuery(name = "Userorder.findByCountry", query = "SELECT u FROM Userorder u WHERE u.country = :country")
+    , @NamedQuery(name = "Userorder.findByPhone", query = "SELECT u FROM Userorder u WHERE u.phone = :phone")
+    , @NamedQuery(name = "Userorder.findByZip", query = "SELECT u FROM Userorder u WHERE u.zip = :zip")})
 public class UserOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "order_id")
     private Integer orderId;
@@ -66,7 +66,7 @@ public class UserOrder implements Serializable {
     @Column(name = "zip")
     private String zip;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "orderId")
-    private Collection<OrderItem> orderItemCollection;
+    private Collection<Orderitem> orderitemCollection;
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     @ManyToOne(optional = false)
     private User userId;
@@ -74,8 +74,12 @@ public class UserOrder implements Serializable {
     public UserOrder() {
     }
 
+    public UserOrder(Integer orderId) {
+        this.orderId = orderId;
+    }
 
-    public UserOrder(String shipAddress, String city, String state, String country, String phone, String zip) {
+    public UserOrder(Integer orderId, String shipAddress, String city, String state, String country, String phone, String zip) {
+        this.orderId = orderId;
         this.shipAddress = shipAddress;
         this.city = city;
         this.state = state;
@@ -141,12 +145,12 @@ public class UserOrder implements Serializable {
     }
 
     @XmlTransient
-    public Collection<OrderItem> getOrderItemCollection() {
-        return orderItemCollection;
+    public Collection<Orderitem> getOrderitemCollection() {
+        return orderitemCollection;
     }
 
-    public void setOrderItemCollection(Collection<OrderItem> orderItemCollection) {
-        this.orderItemCollection = orderItemCollection;
+    public void setOrderitemCollection(Collection<Orderitem> orderitemCollection) {
+        this.orderitemCollection = orderitemCollection;
     }
 
     public User getUserId() {
@@ -179,7 +183,7 @@ public class UserOrder implements Serializable {
 
     @Override
     public String toString() {
-        return "com.iti.model.entity.UserOrder[ orderId=" + orderId + " ]";
+        return "com.iti.model.entites.Userorder[ orderId=" + orderId + " ]";
     }
     
 }

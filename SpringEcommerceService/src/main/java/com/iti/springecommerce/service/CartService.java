@@ -5,10 +5,12 @@
  */
 package com.iti.springecommerce.service;
 
+
 import com.iti.model.dao.CartItemDAO;
-import com.iti.model.entity.CartItem;
-import com.iti.model.entity.Product;
-import com.iti.model.entity.User;
+import com.iti.model.entites.CartItem;
+import com.iti.model.entites.Product;
+import com.iti.model.entites.User;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 

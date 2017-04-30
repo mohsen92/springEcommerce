@@ -6,7 +6,8 @@
 package com.iti.model.dao;
 
 
-import com.iti.model.entity.ProductImage;
+
+import com.iti.model.entites.ProductImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

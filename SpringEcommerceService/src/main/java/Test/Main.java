@@ -5,7 +5,8 @@
  */
 package Test;
 
-import com.iti.model.entity.ProductImage;
+
+import com.iti.model.entites.ProductImage;
 import com.iti.springecommerce.service.ProductService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
