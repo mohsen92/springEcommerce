@@ -10,8 +10,8 @@ import javax.mail.*;
 import javax.mail.internet.*;    
 public class Mailer{  
     
-    final static String MAIL = "wannabuy.eg@gmail.com";
-    final static String PASS = "vmnvmloagjavfdsh";
+    final static String MAIL = "ecommercespring@gmail.com";
+    final static String PASS = "koeplwmnezvtxuss";
     
     public static void send(String to,String sub,String msg){  
           //Get properties object    
