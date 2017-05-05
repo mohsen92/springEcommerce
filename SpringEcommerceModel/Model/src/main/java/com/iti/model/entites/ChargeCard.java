@@ -26,11 +26,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "chargecard")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Chargecard.findAll", query = "SELECT c FROM Chargecard c")
-    , @NamedQuery(name = "Chargecard.findByCreditCardid", query = "SELECT c FROM Chargecard c WHERE c.creditCardid = :creditCardid")
-    , @NamedQuery(name = "Chargecard.findByAmonut", query = "SELECT c FROM Chargecard c WHERE c.amonut = :amonut")
-    , @NamedQuery(name = "Chargecard.findByPrinted", query = "SELECT c FROM Chargecard c WHERE c.printed = :printed")
-    , @NamedQuery(name = "Chargecard.findByCharged", query = "SELECT c FROM Chargecard c WHERE c.charged = :charged")})
+    @NamedQuery(name = "ChargeCard.findAll", query = "SELECT c FROM ChargeCard c")
+    , @NamedQuery(name = "ChargeCard.findByCreditCardid", query = "SELECT c FROM ChargeCard c WHERE c.creditCardid = :creditCardid")
+    , @NamedQuery(name = "ChargeCard.findByAmonut", query = "SELECT c FROM ChargeCard c WHERE c.amonut = :amonut")
+    , @NamedQuery(name = "ChargeCard.findByPrinted", query = "SELECT c FROM ChargeCard c WHERE c.printed = :printed")
+    , @NamedQuery(name = "ChargeCard.findByCharged", query = "SELECT c FROM ChargeCard c WHERE c.charged = :charged")})
 public class ChargeCard implements Serializable {
 
     private static final long serialVersionUID = 1L;

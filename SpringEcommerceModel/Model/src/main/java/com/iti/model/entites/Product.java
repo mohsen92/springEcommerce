@@ -61,7 +61,7 @@ public class Product implements Serializable {
     @ManyToOne
     private Category productCategory;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
-    private Collection<Orderitem> orderitemCollection;
+    private Collection<OrderItem> orderitemCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
     private Collection<CartItem> cartitemCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
@@ -131,11 +131,11 @@ public class Product implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Orderitem> getOrderitemCollection() {
+    public Collection<OrderItem> getOrderitemCollection() {
         return orderitemCollection;
     }
 
-    public void setOrderitemCollection(Collection<Orderitem> orderitemCollection) {
+    public void setOrderitemCollection(Collection<OrderItem> orderitemCollection) {
         this.orderitemCollection = orderitemCollection;
     }
 

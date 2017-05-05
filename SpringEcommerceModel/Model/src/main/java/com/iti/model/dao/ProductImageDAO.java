@@ -7,6 +7,7 @@ package com.iti.model.dao;
 
 
 
+import com.iti.model.entites.Product;
 import com.iti.model.entites.ProductImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -15,5 +16,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Mrawi
  */
 public interface ProductImageDAO extends JpaRepository <ProductImage,Integer>{
-    
+    public void deleteOneByproductId(Product productId);
 }

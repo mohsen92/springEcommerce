@@ -2,27 +2,19 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="springProjectPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <class>com.iti.model.entity.User</class>
-    <class>com.iti.model.entity.CartItem</class>
-    <class>com.iti.model.entity.Product</class>
-    <class>com.iti.model.entity.ChargeCard</class>
-    <class>com.iti.model.entity.Category</class>
-    <class>com.iti.model.entity.OrderItem</class>
-    <class>com.iti.model.entity.ProductImage</class>
-    <class>com.iti.model.entity.UserOrder</class>
     <class>com.iti.model.entites.Product</class>
-    <class>com.iti.model.entites.Orderitem</class>
     <class>com.iti.model.entites.Category</class>
     <class>com.iti.model.entites.User</class>
     <class>com.iti.model.entites.ChargeCard</class>
     <class>com.iti.model.entites.ProductImage</class>
     <class>com.iti.model.entites.UserOrder</class>
     <class>com.iti.model.entites.CartItem</class>
+    <class>com.iti.model.entites.OrderItem</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/springproject?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <!--<property name="javax.persistence.jdbc.password" value="root"/>-->
+      <property name="javax.persistence.jdbc.password" value="root"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>

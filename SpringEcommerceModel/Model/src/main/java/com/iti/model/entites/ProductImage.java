@@ -27,9 +27,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "productimage")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Productimage.findAll", query = "SELECT p FROM Productimage p")
-    , @NamedQuery(name = "Productimage.findById", query = "SELECT p FROM Productimage p WHERE p.id = :id")
-    , @NamedQuery(name = "Productimage.findByUrl", query = "SELECT p FROM Productimage p WHERE p.url = :url")})
+    @NamedQuery(name = "ProductImage.findAll", query = "SELECT p FROM ProductImage p")
+    , @NamedQuery(name = "ProductImage.findById", query = "SELECT p FROM ProductImage p WHERE p.id = :id")
+    , @NamedQuery(name = "ProductImage.findByUrl", query = "SELECT p FROM ProductImage p WHERE p.url = :url")})
 public class ProductImage implements Serializable {
 
     private static final long serialVersionUID = 1L;
