@@ -53,6 +53,8 @@ public class CartService {
         cartItemDAO.save(cartItem);
     }
     
-    
+    public void freeCart(int userId){
+        cartItemDAO.deleteCartItemByUserId_userId(userId);
+    }
     
 }
