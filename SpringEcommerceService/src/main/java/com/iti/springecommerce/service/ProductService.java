@@ -177,4 +177,19 @@ public class ProductService {
         }
         return true;
     }
+    
+    @Transactional
+    public int reduceQuantity(int ProductId, int number) {
+        if (isExists(ProductId)) {
+            Product targetProduct = productRepo.findOne(ProductId);
+            if(targetProduct.getQuantityInStock()> 0){
+                int oldQunt = targetProduct.getQuantityInStock();
+                targetProduct.setQuantityInStock(oldQunt-number);
+                productRepo.save(targetProduct);
+            }
+            return targetProduct.getQuantityInStock();
+
+        } else 
+            return -1;  
+    }
 }

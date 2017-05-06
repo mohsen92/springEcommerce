@@ -33,10 +33,9 @@ public class UserOrderService {
     @Autowired
     private CartService cartService;
 
-
     @Transactional
     public List<?> checkOut(User user, UserOrder userOrder, List<CartItem> cartItems) {
-        List<?> result = null;
+        List<?> result;
         List<Product> unAvailableProducts = checkProductsAvailability(cartItems);
         if (unAvailableProducts.isEmpty()) {
             if (user.getCredit() >= getTotalPrice(cartItems)) {
@@ -53,7 +52,9 @@ public class UserOrderService {
                     orderItems.add(orderItem);
                 });
                 uOrder.setOrderitemCollection(orderItems);
-                //reduce quantity of each product 
+                cartItems.forEach((cartItem) -> {
+                    productService.reduceQuantity(cartItem.getProductId().getProductId(), cartItem.getQuantity());
+                });
 
                 cartService.freeCart(user.getUserId());
                 result = new ArrayList<String>(Arrays.asList("Thank You ! your order ready for shipping"));
